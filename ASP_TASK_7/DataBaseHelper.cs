@@ -1,4 +1,4 @@
-﻿using Evaluation2_Screens;
+using Evaluation2_Screens;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,6 +34,11 @@ namespace ASP_TASK_7
             public bool tdVisible { get; set; } = true;
             public int rowspan { get; set; } = 1;
         }
+        public class MonthYear
+        {
+            public static int selectedMonth { get; set; }
+            public static int selectedYear { get; set; }
+        }
         DataTable frontenddt = new DataTable("Output1");
         DataTable approvedt = new DataTable("Output2");
         DataTable calendardt = new DataTable("Output3");
@@ -50,40 +55,14 @@ namespace ASP_TASK_7
                 frontenddt.Columns.Add("Method", typeof(string));
                 frontenddt.Columns.Add("Instrument", typeof(string));
                 frontenddt.Columns.Add("ActionPlan", typeof(string));
-                frontenddt.Columns.Add("01-01-2024", typeof(string));
-                frontenddt.Columns.Add("02-01-2024", typeof(string));
-                frontenddt.Columns.Add("03-01-2024", typeof(string));
-                frontenddt.Columns.Add("04-01-2024", typeof(string));
-                frontenddt.Columns.Add("05-01-2024", typeof(string));
-                frontenddt.Columns.Add("06-01-2024", typeof(string));
-                frontenddt.Columns.Add("07-01-2024", typeof(string));
-                frontenddt.Columns.Add("08-01-2024", typeof(string));
-                frontenddt.Columns.Add("09-01-2024", typeof(string));
-                frontenddt.Columns.Add("10-01-2024", typeof(string));
-                frontenddt.Columns.Add("11-01-2024", typeof(string));
-                frontenddt.Columns.Add("12-01-2024", typeof(string));
-                frontenddt.Columns.Add("13-01-2024", typeof(string));
-                frontenddt.Columns.Add("14-01-2024", typeof(string));
-                frontenddt.Columns.Add("15-01-2024", typeof(string));
-                frontenddt.Columns.Add("16-01-2024", typeof(string));
-                frontenddt.Columns.Add("17-01-2024", typeof(string));
-                frontenddt.Columns.Add("18-01-2024", typeof(string));
-                frontenddt.Columns.Add("19-01-2024", typeof(string));
-                frontenddt.Columns.Add("20-01-2024", typeof(string));
-                frontenddt.Columns.Add("21-01-2024", typeof(string));
-                frontenddt.Columns.Add("22-01-2024", typeof(string));
-                frontenddt.Columns.Add("23-01-2024", typeof(string));
-                frontenddt.Columns.Add("24-01-2024", typeof(string));
-                frontenddt.Columns.Add("25-01-2024", typeof(string));
-                frontenddt.Columns.Add("26-01-2024", typeof(string));
-                frontenddt.Columns.Add("27-01-2024", typeof(string));
-                frontenddt.Columns.Add("28-01-2024", typeof(string));
-                frontenddt.Columns.Add("29-01-2024", typeof(string));
-                frontenddt.Columns.Add("30-01-2024", typeof(string));
-                frontenddt.Columns.Add("31-01-2024", typeof(string));
+              
 
-
-
+                int DaysInMonth = DateTime.DaysInMonth(MonthYear.selectedYear,MonthYear.selectedMonth);
+                for(int day=1; day <= DaysInMonth; day++)
+                {
+                    string columnName = new DateTime(MonthYear.selectedYear, MonthYear.selectedMonth, day).ToString("dd-MM-yyyy");
+                    frontenddt.Columns.Add(columnName, typeof(string));
+                }
 
                 // Add rows to the DataTable
                 frontenddt.Rows.Add(1, "General Cleanliness", "M/C should be free from Dirt", "hello.png", "bolt.png", "cleaning","OK", "OK", "OK", "OK", "OK", "OK", "OK", "OK");
@@ -97,9 +76,6 @@ namespace ASP_TASK_7
                 frontenddt.Rows.Add(9, "General Cleanliness", "M/C should be free from Dirt", "hello.png", "bolt.png", "cleaning", "OK", "OK", "OK", "OK", "OK", "OK", "OK", "OK");
                 frontenddt.Rows.Add(10, "Check for oil leakage", "It should be free from leakage", "eye.png", "handkerchief.png", "Tightening", "OK", "OK", "OK", "OK", "OK", "OK", "OK", "OK");
               
-
-
-
                 // Print the DataTable contents
                 foreach (DataRow row in frontenddt.Rows)
                 {
@@ -135,30 +111,7 @@ namespace ASP_TASK_7
                 approvedt.Rows.Add("06-01-2024", "OP01", "01-01-2024 03:12:22", "SP06", "06-01-2024 03:12:22");
                 approvedt.Rows.Add("07-01-2024", "OP02", "02-01-2024 02:12:22", "SP07", "07-01-2024 05:12:22");
                 approvedt.Rows.Add("08-01-2024", "OP03", "03-01-2024 09:12:22", "SP08", "08-01-2024 04:12:22");
-                approvedt.Rows.Add("09-01-2024");
-                approvedt.Rows.Add("10-01-2024");
-                approvedt.Rows.Add("11-01-2024");
-                approvedt.Rows.Add("12-01-2024");
-                approvedt.Rows.Add("13-01-2024");
-                approvedt.Rows.Add("14-01-2024");
-                approvedt.Rows.Add("15-01-2024");
-                approvedt.Rows.Add("16-01-2024");
-                approvedt.Rows.Add("17-01-2024");
-                approvedt.Rows.Add("18-01-2024");
-                approvedt.Rows.Add("19-01-2024");
-                approvedt.Rows.Add("20-01-2024");
-                approvedt.Rows.Add("21-01-2024");
-                approvedt.Rows.Add("22-01-2024");
-                approvedt.Rows.Add("23-01-2024");
-                approvedt.Rows.Add("24-01-2024");
-                approvedt.Rows.Add("25-01-2024");
-                approvedt.Rows.Add("26-01-2024");
-                approvedt.Rows.Add("27-01-2024");
-                approvedt.Rows.Add("28-01-2024");
-                approvedt.Rows.Add("29-01-2024");
-                approvedt.Rows.Add("30-01-2024");
-                approvedt.Rows.Add("31-01-2024");
-
+             
                 // Print the DataTable contents
                 foreach (DataRow row in frontenddt.Rows)
                 {
