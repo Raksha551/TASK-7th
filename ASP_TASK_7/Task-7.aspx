@@ -3,8 +3,13 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <head runat="server">
     <title></title>
+    <script>
+        $("td").height(50);
+
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +17,7 @@
             padding: 0;
             text-align: center;
             background-color: #0a0c3f;
+            border-spacing: 0px 0px;
         }
 
 
@@ -35,7 +41,6 @@
             right: 0;
             z-index: 1000;
             margin-bottom: 0px;
-            
         }
 
         .header-left {
@@ -90,7 +95,6 @@
             align-content: center;
             align-items: center;
             padding-right: 0px;
-          
         }
 
         .sidebar-icons {
@@ -193,7 +197,7 @@
             margin-left: 6%;
             width: 120%;
             padding-bottom: 6px;
-            padding-top: 40px;
+            padding-top: 60px;
             padding-left: 15px;
             border: 1px solid #DADBDD;
             border-radius: 10px;
@@ -217,7 +221,7 @@
             }
 
 
-/*            .filtertable > td {
+        /*            .filtertable > td {
                 height: 50px;
                 width: 180px;
                 padding: 6px;
@@ -228,182 +232,157 @@
         }
 
         .listview-Table {
-               margin-left: 14%;
-    color: white;
-    margin-top: 2%;
-
-      }
+            margin-left: 14%;
+            color: white;
+            margin-top: 2%;
+            border-spacing: 0px 0px;
+        }
 
             .listview-Table > div > div > table > tbody > tr > td {
-               
-                color:black;
-               
+                border-spacing: 0px 0px;
+                color: black;
             }
-               .listview-Table > div > div > table > tbody >  tr:nth-child(even):nth-child(n+3){
-       background-color:#ddd;
-   }
-                           .listview-Table > div >div> table > tbody >  tr:nth-child(odd):nth-child(n+3){
-    background-color:white;
-}
-            .listview-Table > div >div> table > tbody > tr:nth-child(2) > td:nth-child(1) {
-               
-               background-color:blue;
-               border: 2px solid white;
-               color:#ddd;
-            }
-                .listview-Table > div >div> table > tbody > tr:nth-child(2) > td > table > tbody > tr > td{
-                    color:white;
-                        width: 15.2%;
-                     
-                }
-                /* .listview-Table > div > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(1) > td:nth-child(n+10){
-     color:white;
-         width: 10%;
-      
- }*/
-            .listview-Table > div >div> table > tbody > tr > td:last-child {
-                height: 20px;
-            }
-           .ineerlistview td{
-               
-           }
-            
-             .listview-Table > div >div> table > tbody >  tr:nth-child(1) > td  {
-padding:5px;   
-border:1px solid #ddd;
- }/**/
-                         .listview-Table > div >div> table > tbody > tr:nth-child(1) > td > table >tbody >tr > td {
- 
-    border:1px solid blue;
-   
-}
-                         .listview-Table > div >div> table > tbody > tr:nth-child(1) > td{
-                             background-color:blue;
-                             color:white;
-                             border:1px solid #ddd;
- margin:0px;
-                         }
-                       
-             /*.listview-Table > div > table > tbody > tr:last-child > td:nth-last-child(-n+5) {
-    visibility: hidden;
-}*/.listview-Table > div >div> table > tbody > tr:nth-last-child(2) > td:nth-child(n+2):nth-child(-n+6) {
-    visibility: hidden;
-    display: none;
-}
-   .listview-Table > div >div> table > tbody > tr:last-child > td:nth-child(n+2):nth-child(-n+6) {
-    visibility: hidden;
-    display: none;
-}
-   td[visible='false'] {
-    display: none; 
-}
-.ineerlistview > tbody > tr >td{
-  
-    
-     width:100px;
-}
-..ineerlistview{
-     white-space: normal;
- padding: 0px;
- margin: 0px;
- table-layout: fixed; /* Enforce fixed layout for consistent column widths */
- border-collapse: collapse;
-}
-.listview-Table{
-        white-space: normal;
-      
-table-layout: fixed; /* Enforce fixed layout for consistent column widths */
-border-collapse: collapse;
-}
-/*.ineerlistview > tbody > tr > td{
-      border:1px solid black;
-}*/
- /*.listview-Table > div > table > tbody > tr:nth-child(2) > td > table > tbody > tr > td{
-      border:1px solid black;    
-     
-}*/
- .listview-Table > div > div>table > tbody > tr:nth-child(2) > td > table > tbody {
-      background-color:blue;
- color:white;
- }
- 
-  .listview-Table > div >div> table > tbody > tr:nth-child(1) {
-   
-       position: sticky;
-    top: 0;
-    background-color: #f2f2f2;
-    z-index: 10;
-    border:1px solid #ddd;
-}
- 
- 
 
-    .listview-Table > div >div> table > tbody > tr:nth-child(2) {
-    border:2px solid #ddd;
-          position: sticky;
-   
-    /* background-color: #f2f2f2; */
-    z-index: 100;
-    top: 74px;
-}
- 
- .listview-Table > div >div> table > tbody{
-       border: 0px  !important;
- }
-   .listview-Table > div >div> table{
-         border: 0px !important;
-   }
- table{
-    border-collapse:collapse;
-    border-spacing:0px 0px;
-        border: 0px;
-  
-}
- .ineerlistview{
-        height: 63px;
-      
-    width: 100%;
-        table-layout: fixed;
- }
-        .ineerlistview td {
-            width:20%;
-             
+            .listview-Table > div > div > table > tbody > tr:nth-child(n+3) > td:last-child {
+                border: none;
+                display: inline-table;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-child(n+3):nth-child(even) > td:nth-child(-n+6) {
+                background-color: #ddd;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-child(n+3):nth-child(even) > td:last-child > table > tbody > tr > td:nth-child(-n+4) {
+                background-color: #ddd;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-child(n+3):nth-child(even) > td:last-child > table > tbody > tr > td:not(:nth-child(5)):not(:nth-child(12)):not(:nth-child(14)):not(:nth-child(19)):not(:nth-child(26)) {
+                background-color: #ddd;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-child(odd):nth-child(n+3) {
+                background-color: white;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-child(2) > td:nth-child(1) {
+                background-color: blue;
+                color: #ddd;
+                border: none;
+            }
+
+            .listview-Table > div > div > table > tbody > tr:nth-last-child(2) > td:last-child {
+                color: black;
+            }
+
+        td {
+            height: 63px;
         }
- .listview-Table td{
-     border:1px solid #ddd;
- }
-  .scrollable-table-wrapper {
+
+
+
+        .listview-Table > div > div > table > tbody > tr:nth-child(1) > td {
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+            /**/
+            .listview-Table > div > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr > td {
+                border: 1px solid blue;
+            }
+
+        .listview-Table > div > div > table > tbody > tr:nth-child(1) > td {
+            background-color: blue;
+            color: white;
+            border: 1px solid #ddd;
+        }
+
+
+        /*.listview-Table > div > table > tbody > tr:last-child > td:nth-last-child(-n+5) {
+    visibility: hidden;
+}*/ .listview-Table > div > div > table > tbody > tr:nth-last-child(2) > td:nth-child(n+2):nth-child(-n+6) {
+            visibility: hidden;
+            display: none;
+        }
+
+        .listview-Table > div > div > table > tbody > tr:last-child > td:nth-child(n+2):nth-child(-n+6) {
+            visibility: hidden;
+            display: none;
+        }
+
+        .ineerlistview > tbody > tr > td {
+            width: 100px;
+        }
+
+
+
+        .listview-Table > div > div > table > tbody > tr:nth-child(2) > td > table > tbody {
+            background-color: blue;
+            color: white;
+        }
+
+        .listview-Table > div > div > table > tbody > tr:nth-child(1) {
+            position: sticky;
+            top: 0;
+            background-color: #f2f2f2;
+            z-index: 10;
+            border: 1px solid #ddd;
+        }
+
+
+
+        .listview-Table > div > div > table > tbody > tr:nth-child(2) {
+            position: sticky;
+            /* background-color: #f2f2f2; */
+            z-index: 100;
+            top: 78px;
+        }
+
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .ineerlistview {
+            list-style: none;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+
+        .scrollable-table-wrapper {
             height: 580px;
             overflow: scroll;
-            
+        }
+
+        .listview-Table td {
+            border-right: 1px solid #ddd;
         }
     </style>
-  <script>
-     
-      function handleButtonClick(button) {
-          // Get the parent element of the button (the cell containing the button)
-          const parentCell = button.parentElement;
+    <script>
 
-          parentCell.innerHTML = "<span style='font-size:14px; color:green; word-wrap: break-word; white-space: normal; padding-right: 10px; overflow: hidden;'>SP01_data</span>";       
-          localStorage.setItem(button.id, 'clicked');
-      }
+        function handleButtonClick(button) {
+            // Get the parent element of the button (the cell containing the button)
+            const parentCell = button.parentElement;
 
-     
-      window.onload = function () {
-          // Loop through all buttons and check if they have been clicked previously
-          const buttons = document.querySelectorAll('button');
-          buttons.forEach(button => {
-              if (localStorage.getItem(button.id) === 'clicked') {                  
-                  button.parentElement.innerHTML = "<span style='font-size:14px; color:green; word-wrap: break-word; white-space: normal; padding-right: 10px; overflow: hidden;'>SP01_data</span>";
-              }
-          });
-      }
-  </script>
+            parentCell.innerHTML = "<span style='font-size:14px; color:green; word-wrap: break-word; white-space: normal; padding-right: 10px; overflow: hidden;'>SP01_data</span>";
+            localStorage.setItem(button.id, 'clicked');
+        }
+
+
+        window.onload = function () {
+            // Loop through all buttons and check if they have been clicked previously
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                if (localStorage.getItem(button.id) === 'clicked') {
+                    button.parentElement.innerHTML = "<span style='font-size:14px; color:green; word-wrap: break-word; white-space: normal; padding-right: 10px; overflow: hidden;'>SP01_data</span>";
+                }
+            });
+        }
+    </script>
 
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <div class="head-container">
             <div>
                 <img src="./Images/AmiTLogo.jpg" class="header-left" alt="Left Icon" />
@@ -420,7 +399,7 @@ border-collapse: collapse;
                 </div>
             </div>
         </div>
-        <div style="height: 100%">
+        <div style="height: 100%;">
             <div class="sidebar">
                 <div class="sidebar-list">
                     <img src="./Images/list.png" class="sidebar-icons" runat="server" alt="Menu Icon" />
@@ -450,7 +429,7 @@ border-collapse: collapse;
                 </div>
             </div>
         </div>
-        <div class="filters" >
+        <div class="filters">
             <table class="filtertable">
                 <tr>
                     <td>
@@ -480,54 +459,54 @@ border-collapse: collapse;
             </table>
         </div>
         <asp:HiddenField runat="server" ID="HiddenField1" Value='<%# Eval("ButtonState") %>' />
-        <div class="listview-Table" >
+        <div class="listview-Table" style="background-color: white;">
             <asp:ScriptManager runat="server"></asp:ScriptManager>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <asp:ListView runat="server" ID="listview1" ItemPlaceholderID="itemplaceholder">
                         <LayoutTemplate>
-                             <div class="scrollable-table-wrapper">
-                            <table>
-                                <tr runat="server" id="itemplaceholder"></tr>
-                            </table>
-                                    </div>
+                            <div class="scrollable-table-wrapper">
+                                <table>
+                                    <tr runat="server" id="itemplaceholder"></tr>
+                                </table>
+                            </div>
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
                                 <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>' colspan='<%# Eval("tdColSpan") %>'>
-                                    <asp:Label runat="server" Text='<%# Eval("CheckpointID") %>'></asp:Label>
+                                    <asp:Label runat="server" ID="lblpointid" Text='<%# Bind("CheckpointID") %>'></asp:Label>
                                 </td>
-                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>' >
+                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>'>
                                     <asp:Label runat="server" Text='<%# Eval("CheckpointItem") %>'></asp:Label>
                                 </td>
-                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>' >
+                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>'>
                                     <asp:Label runat="server" Text='<%# Eval("Requirement") %>'></asp:Label>
                                 </td>
-                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>' >
+                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>'>
                                     <%# Convert.ToBoolean(Eval("IsHeaderRow")) ? Eval("Method") : $"<img src='{Eval("Method")}' />" %>
                                 </td>
                                 <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>'>
                                     <%# Convert.ToBoolean(Eval("IsHeaderRow")) ? Eval("Instrument") : $"<img src='{Eval("Instrument")}' />" %>
                                 </td>
 
-                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>' >
+                                <td runat="server" rowspan='<%# Eval("RowSpan") %>' visible='<%# Eval("tdVisible") %>'>
                                     <asp:Label runat="server" Text='<%# Eval("ActionPlan") %>'></asp:Label>
                                 </td>
                                 <td>
                                     <asp:ListView runat="server" ItemPlaceholderID="inneritemplaceholder" ID="listivew2" DataSource='<%# Eval("innerlistviewdata") %>'>
                                         <LayoutTemplate>
                                             <table class="ineerlistview">
-                                                <tr runat="server" style="border-collapse:collapse;">
+                                                <tr runat="server" style="border-collapse: collapse;">
                                                     <td id="inneritemplaceholder"></td>
                                                 </tr>
                                             </table>
                                         </LayoutTemplate>
                                         <ItemTemplate>
-                                           <td runat="server" 
-    rowspan='<%# Eval("rowspan") %>' 
-    visible='<%# Eval("tdVisible") %>'>
-    <asp:Label runat="server" Text='<%# Eval("dynamic_dates") %>'></asp:Label>
-</td>
+                                            <td runat="server"
+                                                rowspan='<%# Eval("rowspan") %>'
+                                                visible='<%# Eval("tdVisible") %>'>
+                                                <asp:Label runat="server" Text='<%# Eval("dynamic_dates") %>'></asp:Label>
+                                            </td>
 
                                         </ItemTemplate>
                                     </asp:ListView>
